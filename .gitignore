@@ -11,3 +11,7 @@
 *.apk
 /app/release/
 /gradle/wrapper/
+
+/app/src/main/gen/com/zxg/web/Manifest.java
+/app/src/main/gen/com/zxg/web/BuildConfig.java
+/app/src/main/gen/com/zxg/web/R.java

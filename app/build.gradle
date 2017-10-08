@@ -1,26 +1,36 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias '37bt'
+            keyPassword '123456'
+            storeFile file('../37bt.jks')
+            storePassword '123456'
+        }
+    }
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.zxg.web"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 1
+        versionCode 2
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.0.0-beta1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
